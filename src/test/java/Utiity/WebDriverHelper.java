@@ -1,9 +1,16 @@
 package Utiity;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.function.Function;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * @author mahen
@@ -11,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  */
 public class WebDriverHelper {
 	
-	static WebDriver driver;
+	 static WebDriver driver;
 	static WebDriverHelper helper;
 	
 	public static WebDriverHelper getWebDriverHelper() {
@@ -51,6 +58,57 @@ public class WebDriverHelper {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
+
+	 /**
+		 * @author mahen
+		 * @description: this method use to switch web driver to newly open web tab
+		 * 
+		 */
+	
+	 public void switchTab()
+	 {
+		 String oldTab = driver.getWindowHandle();
+		 ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+		 newTab.remove(oldTab);
+		 driver.switchTo().window(newTab.get(0));
+	 }
+	 
+	 /**
+		 * @author mahen
+		 * @description: this method use to wait till expected element is visible.
+		 * 
+		 */
+	 
+	 public void waitPageLoad(WebElement x)
+	 {
+		/* WebDriverWait wait = new WebDriverWait(driver, 30);
+		 wait.until(ExpectedConditions.elementToBeClickable(x));
+		*/
+		 
+		 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		 wait.until(ExpectedConditions.elementToBeClickable(x));
+		 
+		 
+		
+	 }
+	 
+	 /**
+		 * @author mahen
+		 * @description: this method use to wait till  every component in the web page is loaded.
+		 * 
+		 */
+	 
+	 public void waitForPageLoad() {
+
+		    Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		    wait.until(new Function<WebDriver, Boolean>() {
+		        public Boolean apply(WebDriver driver) {
+		            return String
+		                .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
+		                .equals("complete");
+		        }
+		    });
+	 }
 
 	
 }
