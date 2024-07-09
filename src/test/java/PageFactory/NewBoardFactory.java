@@ -28,7 +28,7 @@ public class NewBoardFactory {
 	@FindBy(how =How.XPATH, using="//button[@class='inline-block py-1 px-3 mt-1 h-8 text-sm font-normal text-center text-white bg-green7 hover:bg-green6 rounded-sm focus:outline-none']")
 	public WebElement CreateBoardButton;
 	
-	@FindBy(how=How.XPATH,using="//div[@class='inline-block invisible px-3 font-bold']")
+	@FindBy(how=How.XPATH,using="//input[@name='board-title']")
 	public WebElement VerifyBoardName;
 	
 	

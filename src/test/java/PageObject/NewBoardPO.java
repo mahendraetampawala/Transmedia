@@ -3,6 +3,10 @@
  */
 package PageObject;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import PageFactory.NewBoardFactory;
 import Utiity.WebDriverHelper;
 
@@ -31,17 +35,18 @@ public class NewBoardPO {
 		NewBoardFactory.pf.CreateBoardButton.click();
 	}
 	
-	public String verifyBoardNameText() {
+	public void verifyBoardNameText(String titlename) {
 		
-		String boardname;
+		String Actualboardname;
 		
-		boardname=NewBoardFactory.pf.VerifyBoardName.;
+		Actualboardname=NewBoardFactory.pf.VerifyBoardName.getAttribute("value");
 		
+		Assert.assertEquals(Actualboardname,titlename);
+
 		
-		System.out.println(boardname);
+		System.out.println(Actualboardname);
 		System.out.println("All executed");
 		
-		return boardname;
 	}
 	
 }

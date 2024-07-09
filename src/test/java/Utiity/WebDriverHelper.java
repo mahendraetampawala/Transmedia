@@ -81,11 +81,8 @@ public class WebDriverHelper {
 	 
 	 public void waitPageLoad(WebElement x)
 	 {
-		/* WebDriverWait wait = new WebDriverWait(driver, 30);
-		 wait.until(ExpectedConditions.elementToBeClickable(x));
-		*/
 		 
-		 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(80));
 		 wait.until(ExpectedConditions.elementToBeClickable(x));
 		 
 		 

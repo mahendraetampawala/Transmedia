@@ -29,6 +29,7 @@ public class NewBoard {
 	@Given("user clicks on create new board")
 	public void user_clicks_on_create_new_board() {
 	   
+		WebDriverHelper.getWebDriverHelper().waitForPageLoad();
 		WebDriverHelper.getWebDriverHelper().waitPageLoad(NewBoardFactory.pf.createNewBoard);
 		NewBoardPO.getnewboardPO().clicklonNewBoard();
 		System.out.println("This worked");
@@ -49,12 +50,13 @@ public class NewBoard {
 		System.out.println("Create board button clicked");
 	}
 
-	@Then("validate the created board")
-	public void validate_the_created_board() throws InterruptedException {
+	@Then("verifying the created board title is equal to {string}")
+	public void verifying_the_created_board_title_is_equal_to(String title) throws InterruptedException {
 	  
 		//WebDriverHelper.getWebDriverHelper().waitPageLoad(NewBoardFactory.pf.VerifyBoardName);
 		Thread.sleep(2000);
-		NewBoardPO.getnewboardPO().verifyBoardNameText();
+		WebDriverHelper.getWebDriverHelper().waitForPageLoad();
+		NewBoardPO.getnewboardPO().verifyBoardNameText(title);
 		
 		
 	}
