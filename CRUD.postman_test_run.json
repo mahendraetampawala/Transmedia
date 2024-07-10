@@ -1,0 +1,88 @@
+{
+	"id": "3044d854-5a13-4f93-b553-72f4a5fdc3d1",
+	"name": "CRUD",
+	"timestamp": "2024-07-10T08:26:35.455Z",
+	"collection_id": "15455428-d99c50ef-3671-4336-9068-341e770c7a0b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": "2",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-07-10T08:26:34.756Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "320bd754-4389-4175-94db-c982c980e887",
+			"name": "Adding a new board",
+			"url": "http://localhost:3000/api/boards",
+			"time": 362,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				362
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "37ddd311-5b5c-42a9-9260-85ab9681b9e3",
+			"name": "Adding a new list",
+			"url": "http://localhost:3000/api/lists",
+			"time": 27,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				27
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c7206562-5483-4f73-8e52-5657fe0a3354",
+			"name": "Deleting the newly created list",
+			"url": "http://localhost:3000/api/lists/1",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				27
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 416,
+	"collection": {
+		"requests": [
+			{
+				"id": "320bd754-4389-4175-94db-c982c980e887",
+				"method": "POST"
+			},
+			{
+				"id": "37ddd311-5b5c-42a9-9260-85ab9681b9e3",
+				"method": "POST"
+			},
+			{
+				"id": "c7206562-5483-4f73-8e52-5657fe0a3354",
+				"method": "DELETE"
+			}
+		]
+	}
+}
