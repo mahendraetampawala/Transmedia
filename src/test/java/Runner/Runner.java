@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
  *
  */
 
-@CucumberOptions(features="src/test/resources/Feature", glue={"StepDefinitions"},plugin={"pretty","json:target/cucumber-json.jason"})
+@CucumberOptions(features="src/test/resources/Feature", glue={"StepDefinitions"},plugin={"pretty","json:target/cucumber-json.json"})
 public class Runner extends AbstractTestNGCucumberTests{
 
 	
